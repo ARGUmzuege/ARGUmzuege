@@ -1,0 +1,1 @@
+export { PrivateMoving } from './PrivateMoving'; 

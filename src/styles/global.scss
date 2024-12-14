@@ -1,0 +1,93 @@
+@import './variables.scss';
+
+// Reset und Basis-Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  background-color: var(--primary-dark);
+  color: var(--text-primary);
+}
+
+// Container
+.container {
+  @include container;
+}
+
+// Typografie
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+// Links
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition-base);
+
+  &:hover {
+    color: var(--accent-light);
+  }
+}
+
+// Buttons
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: none;
+  text-align: center;
+
+  &.primary {
+    background: var(--accent);
+    color: var(--primary-dark);
+
+    &:hover {
+      background: var(--accent-light);
+      transform: translateY(-2px);
+    }
+  }
+
+  &.secondary {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+
+    &:hover {
+      background: var(--accent);
+      color: var(--primary-dark);
+    }
+  }
+}
+
+// Sections
+section {
+  @include section-padding;
+}
+
+// Cards
+.card {
+  @include card;
+  padding: 1.5rem;
+}
+
+// Animations
+.hover-lift {
+  @include hover-lift;
+} 

@@ -1,0 +1,231 @@
+:root {
+  --primary: #1B3C59;
+  --primary-dark: #0A1F33;
+  --accent: #DAA520;
+  --dark: #0A1F33;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary-dark);
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+}
+
+.process-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--primary-dark);
+}
+
+.process-title {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin: 4rem 0 1rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.process-subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.process-step::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, rgba(218,165,32,0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateX(10px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(218,165,32,0.3);
+}
+
+.process-step:hover::before {
+  opacity: 1;
+}
+
+.step-number {
+  background: var(--accent);
+  color: var(--dark);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.process-step:hover .step-number {
+  transform: scale(1.1);
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h3 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 600;
+}
+
+.step-content p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(218,165,32,0.05) 0%, transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(218,165,32,0.05) 0%, transparent 30%),
+    linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.02) 50%, transparent 100%);
+  animation: backgroundShimmer 10s ease-in-out infinite alternate;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
+  animation: shimmerHero 3s ease-in-out infinite;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+  text-shadow: 
+    0 2px 5px rgba(0,0,0,0.2),
+    0 5px 15px rgba(0,0,0,0.1);
+  animation: titleFloat 6s ease-in-out infinite;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  font-weight: 300;
+}
+
+@keyframes backgroundShimmer {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes shimmerHero {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes titleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 40vh;
+    padding: 4rem 1.5rem;
+  }
+  
+  .process-steps {
+    padding: 0 1rem;
+  }
+  
+  .process-step {
+    padding: 1.5rem;
+    gap: 1rem;
+    flex-direction: column;
+  }
+  
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .process-step:hover {
+    transform: translateX(5px);
+  }
+} 

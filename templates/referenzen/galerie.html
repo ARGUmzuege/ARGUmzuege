@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Loader -->
+<div class="loader">
+    <div class="loader-progress"></div>
+</div>
+
+<!-- Main Container -->
+<div class="smooth-wrapper">
+    <div class="smooth-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-title-line">Professionelle</span>
+                    <span class="hero-title-line">Umzüge in</span>
+                    <span class="hero-title-line">Wien</span>
+                </h1>
+                <div class="hero-subtitle">
+                    <p>Ihr zuverlässiger Partner für stressfreie Umzüge</p>
+                </div>
+            </div>
+            <div class="hero-model">
+                <canvas id="hero-canvas"></canvas>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <div class="services-title">
+                <h2>Unsere Dienstleistungen</h2>
+            </div>
+            <div class="services-gallery">
+                <div class="service-item" data-service="office">
+                    <div class="service-content">
+                        <h3>Büroumzüge</h3>
+                        <p>Professionelle Büroumzüge mit minimaler Ausfallzeit</p>
+                        <ul class="service-features">
+                            <li>Serverumzüge</li>
+                            <li>IT-Equipment</li>
+                            <li>Arbeitsplätze</li>
+                        </ul>
+                    </div>
+                    <div class="service-visual">
+                        <canvas id="office-canvas"></canvas>
+                    </div>
+                </div>
+                
+                <div class="service-item" data-service="private">
+                    <div class="service-content">
+                        <h3>Privatumzüge</h3>
+                        <p>Sorgfältige Umzüge für Ihr Zuhause</p>
+                        <ul class="service-features">
+                            <li>Möbelmontage</li>
+                            <li>Verpackungsservice</li>
+                            <li>Transportversicherung</li>
+                        </ul>
+                    </div>
+                    <div class="service-visual">
+                        <canvas id="private-canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience-section">
+            <div class="experience-content">
+                <h2>Erfahrung die zählt</h2>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span class="stat-number" data-value="1000">0</span>
+                        <span class="stat-label">Erfolgreiche Umzüge</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-value="15">0</span>
+                        <span class="stat-label">Jahre Erfahrung</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-value="98">0</span>
+                        <span class="stat-label">% Kundenzufriedenheit</span>
+                    </div>
+                </div>
+            </div>
+            <div class="experience-visual">
+                <canvas id="experience-canvas"></canvas>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- Custom Cursor -->
+<div class="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-circle"></div>
+</div>
+
+<!-- Progress Bar -->
+<div class="progress-container">
+    <div class="progress-bar"></div>
+</div>
+
+<!-- Scripts -->
+<script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %} 

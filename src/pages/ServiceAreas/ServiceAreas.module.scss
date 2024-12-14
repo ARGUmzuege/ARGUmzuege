@@ -1,0 +1,191 @@
+.serviceAreas {
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: white;
+  padding-bottom: 4rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #2c2c2c, #1a1a1a);
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.9);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.mainArea {
+  margin-bottom: 4rem;
+}
+
+.cityCard {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  
+  .cityIcon {
+    width: 60px;
+    height: 60px;
+    background: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  p {
+    text-align: center;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+}
+
+.districts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.district {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  color: rgba(255,255,255,0.9);
+  
+  svg {
+    color: #4CAF50;
+  }
+}
+
+.austriaWide {
+  margin-bottom: 4rem;
+  text-align: center;
+
+  h2 {
+    color: #4CAF50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: rgba(255,255,255,0.8);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+  }
+}
+
+.regionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.regionCard {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+
+  svg {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    color: white;
+    font-size: 1.2rem;
+  }
+}
+
+.features {
+  text-align: center;
+
+  h2 {
+    color: #4CAF50;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.featureCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+
+  svg {
+    color: #4CAF50;
+    font-size: 1.2rem;
+  }
+
+  span {
+    color: rgba(255,255,255,0.9);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1rem;
+    
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+
+  .content {
+    padding: 0 1rem;
+  }
+
+  .districts {
+    grid-template-columns: 1fr;
+  }
+
+  .regionsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+} 

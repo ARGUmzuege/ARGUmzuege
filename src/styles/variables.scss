@@ -1,0 +1,97 @@
+:root {
+  // Primärfarben - dunkler und kontrastreicherer Blauton
+  --primary-dark: #1b2838;    // Dunkleres, satteres Navy
+  --primary: #2a4158;         // Kräftigeres Navy Blue
+  --primary-light: #3d5a75;   // Helleres, aber immer noch sattes Navy
+
+  // Akzentfarben - wärmerer, besser lesbarer Kupferton
+  --accent: #e6b17a;         // Helleres, wärmeres Kupfer
+  --accent-light: #f0c699;   // Noch helleres Kupfer für besseren Kontrast
+  --accent-dark: #c89b7b;    // Gedämpftes Kupfer
+
+  // Neutrale Farben - mehr Kontrast zwischen den Stufen
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+
+  // Text - hellere, kontrastreichere Farben
+  --text-primary: #ffffff;    // Reines Weiß für maximalen Kontrast
+  --text-secondary: #e1e1e1;  // Helleres Grau
+  --text-muted: #b0b0b0;     // Mittleres Grau, aber immer noch gut lesbar
+
+  // Hintergrundfarben
+  --bg-dark: #1b2838;        // Dunkel, aber nicht zu dunkel
+  --bg-medium: #2a4158;      // Mittlerer Ton
+  --bg-light: #3d5a75;       // Hell genug für guten Kontrast
+
+  // Funktionale Farben - klarer und besser erkennbar
+  --success: #4CAF50;        // Helleres, klareres Grün
+  --warning: #FFA726;        // Helleres Orange
+  --error: #EF5350;          // Helleres Rot
+
+  // Schatten - weichere, subtilere Schatten
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+  // Layout
+  --container-padding: 2rem;
+  --section-spacing: 4rem;
+  --border-radius: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-sm: 4px;
+
+  // Transitions
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+// Typografie
+$font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$wide: 1200px;
+
+// Z-Index
+$z-layers: (
+  modal: 2000,
+  header: 1000,
+  dropdown: 500,
+  base: 1
+);
+
+// Mixins für häufig verwendete Stile
+@mixin container {
+  max-width: $wide;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+@mixin card {
+  background: var(--primary-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+}
+
+@mixin hover-lift {
+  transition: transform var(--transition-base);
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@mixin section-padding {
+  padding: var(--section-spacing) 0;
+}

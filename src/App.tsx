@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout/Layout';
 import { Home } from './pages/Home/Home';
 import { About } from './pages/About/About';
@@ -30,7 +30,7 @@ import { Locations } from './pages/AboutUs/Locations';
 
 function App() {
   return (
-    <HashRouter basename="/ARGUmzuege">
+    <HashRouter>
       <Layout>
         <Routes>
           {/* Hauptrouten */}

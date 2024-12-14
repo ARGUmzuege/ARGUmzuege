@@ -2,6 +2,7 @@
   "name": "arg-umzuege",
   "version": "1.0.0",
   "description": "ARG Umzüge Website",
+  "homepage": "https://argumzuege.github.io/ARGUmzuege/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

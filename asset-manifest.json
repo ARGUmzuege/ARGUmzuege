@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ARGUmzuege/static/css/main.657c7ce0.css",
+    "main.js": "/ARGUmzuege/static/js/main.4f9104d7.js",
+    "index.html": "/ARGUmzuege/index.html",
+    "main.657c7ce0.css.map": "/ARGUmzuege/static/css/main.657c7ce0.css.map",
+    "main.4f9104d7.js.map": "/ARGUmzuege/static/js/main.4f9104d7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.657c7ce0.css",
+    "static/js/main.4f9104d7.js"
+  ]
+}

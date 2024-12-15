@@ -529,17 +529,23 @@ ${moveDetails.additionalNotes || 'Keine zusätzlichen Notizen'}
               exit={{ opacity: 0 }}
             >
               <div className={styles.collapsibleSection}>
-                <div 
+                <motion.div 
                   className={styles.collapsibleHeader}
                   onClick={() => setIsRoomSectionCollapsed(!isRoomSectionCollapsed)}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  {isRoomSectionCollapsed ? (
-                    <h2>Wollen Sie einen schnellen und unverbindlichen Preis für Ihren Auftrag?</h2>
-                  ) : (
-                    <h2>Wählen Sie Ihre Räume</h2>
-                  )}
-                  {isRoomSectionCollapsed ? <FaChevronDown /> : <FaChevronUp />}
-                </div>
+                  <h2>
+                    {isRoomSectionCollapsed 
+                      ? "Wollen Sie einen schnellen und unverbindlichen Preis für Ihren Auftrag?" 
+                      : "Wählen Sie Ihre Räume"}
+                  </h2>
+                  <motion.div
+                    animate={{ rotate: isRoomSectionCollapsed ? 0 : 180 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {isRoomSectionCollapsed ? <FaChevronDown /> : <FaChevronUp />}
+                  </motion.div>
+                </motion.div>
 
                 <motion.div 
                   className={styles.collapsibleContent}
@@ -548,7 +554,13 @@ ${moveDetails.additionalNotes || 'Keine zusätzlichen Notizen'}
                     height: isRoomSectionCollapsed ? 0 : "auto",
                     opacity: isRoomSectionCollapsed ? 0 : 1
                   }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ 
+                    duration: 0.3,
+                    ease: "easeInOut"
+                  }}
+                  style={{
+                    overflow: "hidden"
+                  }}
                 >
                   <p className={styles.roomSelectionInfo}>
                     Klicken Sie auf die Räume, die umgezogen werden sollen
@@ -569,9 +581,12 @@ ${moveDetails.additionalNotes || 'Keine zusätzlichen Notizen'}
                           <span className={styles.roomIcon}>{room.icon}</span>
                           <h3 className={styles.roomName}>{room.name}</h3>
                           <p className={styles.roomDescription}>{room.description}</p>
-                          <button className={styles.toggleButton}>
+                          <motion.button 
+                            className={styles.toggleButton}
+                            whileTap={{ scale: 0.9 }}
+                          >
                             {isSelected ? <FaMinus /> : <FaPlus />}
-                          </button>
+                          </motion.button>
                         </motion.div>
                       );
                     })}
@@ -580,10 +595,21 @@ ${moveDetails.additionalNotes || 'Keine zusätzlichen Notizen'}
               </div>
 
               {selectedRooms.length > 0 && (
-                <div className={styles.summary}>
+                <motion.div 
+                  className={styles.summary}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
                   <h3>Ausgewählte Räume: {selectedRooms.length}</h3>
                   <div className={styles.selectedRoomsList}>
                     {selectedRooms.map(room => (
+                      <motion.span 
+                        key={room.id} 
+                        className={styles.selectedRoom}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                      >
                       <span key={room.id} className={styles.selectedRoom}>
                         {room.icon} {room.name}
                       </span>

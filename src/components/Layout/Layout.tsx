@@ -3,6 +3,7 @@ import { Footer } from '../Footer/Footer';
 import { ScrollToTop } from '../ScrollToTop/ScrollToTop';
 import { CookieConsent } from '../CookieConsent/CookieConsent';
 import { LoadingSpinner } from '../LoadingSpinner';
+import { MobileNavigation } from '../MobileNavigation/MobileNavigation';
 import { useState, useEffect } from 'react';
 
 interface LayoutProps {
@@ -11,10 +12,19 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
-    // Add loading logic
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
     setIsLoading(false);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   if (isLoading) {
@@ -24,6 +34,7 @@ export const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />
+      {isMobile && <MobileNavigation />}
       <main>{children}</main>
       <Footer />
       <ScrollToTop />

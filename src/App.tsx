@@ -27,56 +27,59 @@ import { SuccessStories } from './pages/References/SuccessStories';
 import { AboutUs } from './pages/AboutUs/AboutUs';
 import { Company } from './pages/AboutUs/Company';
 import { Locations } from './pages/AboutUs/Locations';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   return (
-    <HashRouter>
-      <Layout>
-        <Routes>
-          {/* Hauptrouten */}
-          <Route path="/" element={<Home />} />
-          <Route path="/wer-wir-sind" element={<About />} />
-          <Route path="/unsere-geschichte" element={<History />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/karriere" element={<Career />} />
-          <Route path="/standorte" element={<ServiceAreas />} />
-          <Route path="/kontakt" element={<Contact />} />
-          <Route path="/preise" element={<Prices />} />
+    <ErrorBoundary>
+      <HashRouter>
+        <Layout>
+          <Routes>
+            {/* Hauptrouten */}
+            <Route path="/" element={<Home />} />
+            <Route path="/wer-wir-sind" element={<About />} />
+            <Route path="/unsere-geschichte" element={<History />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/karriere" element={<Career />} />
+            <Route path="/standorte" element={<ServiceAreas />} />
+            <Route path="/kontakt" element={<Contact />} />
+            <Route path="/preise" element={<Prices />} />
 
-          {/* Leistungen */}
-          <Route path="/leistungen" element={<Services />} />
-          <Route path="/leistungen/privatumzug" element={<PrivateMoving />} />
-          <Route path="/leistungen/bueroumzug" element={<OfficeMoving />} />
-          <Route path="/leistungen/betriebsumzug" element={<BusinessMoving />} />
-          <Route path="/leistungen/umzugsmanagement" element={<MovingManagement />} />
+            {/* Leistungen */}
+            <Route path="/leistungen" element={<Services />} />
+            <Route path="/leistungen/privatumzug" element={<PrivateMoving />} />
+            <Route path="/leistungen/bueroumzug" element={<OfficeMoving />} />
+            <Route path="/leistungen/betriebsumzug" element={<BusinessMoving />} />
+            <Route path="/leistungen/umzugsmanagement" element={<MovingManagement />} />
 
-          {/* Referenzen */}
-          <Route path="/referenzen" element={<References />} />
-          <Route path="/referenzen/bewertungen" element={<CustomerReviews />} />
-          <Route path="/referenzen/galerie" element={<ProjectGallery />} />
-          <Route path="/referenzen/erfolge" element={<SuccessStories />} />
+            {/* Referenzen */}
+            <Route path="/referenzen" element={<References />} />
+            <Route path="/referenzen/bewertungen" element={<CustomerReviews />} />
+            <Route path="/referenzen/galerie" element={<ProjectGallery />} />
+            <Route path="/referenzen/erfolge" element={<SuccessStories />} />
 
-          {/* Informationen */}
-          <Route path="/umzugstipps" element={<MovingTips />} />
-          <Route path="/checkliste" element={<Checklist />} />
-          <Route path="/service-gebiete" element={<ServiceAreas />} />
-          <Route path="/faq" element={<FAQ />} />
+            {/* Informationen */}
+            <Route path="/umzugstipps" element={<MovingTips />} />
+            <Route path="/checkliste" element={<Checklist />} />
+            <Route path="/service-gebiete" element={<ServiceAreas />} />
+            <Route path="/faq" element={<FAQ />} />
 
-          {/* Rechtliches */}
-          <Route path="/impressum" element={<Imprint />} />
-          <Route path="/datenschutz" element={<Privacy />} />
-          <Route path="/agb" element={<Terms />} />
+            {/* Rechtliches */}
+            <Route path="/impressum" element={<Imprint />} />
+            <Route path="/datenschutz" element={<Privacy />} />
+            <Route path="/agb" element={<Terms />} />
 
-          {/* AboutUs */}
-          <Route path="/ueberUns" element={<AboutUs />} />
-          <Route path="/ueber-uns" element={<AboutUs />} />
-          <Route path="/ueber-uns/unternehmen" element={<Company />} />
-          <Route path="/ueber-uns/team" element={<Team />} />
-          <Route path="/ueber-uns/karriere" element={<Career />} />
-          <Route path="/ueber-uns/standorte" element={<Locations />} />
-        </Routes>
-      </Layout>
-    </HashRouter>
+            {/* AboutUs */}
+            <Route path="/ueberUns" element={<AboutUs />} />
+            <Route path="/ueber-uns" element={<AboutUs />} />
+            <Route path="/ueber-uns/unternehmen" element={<Company />} />
+            <Route path="/ueber-uns/team" element={<Team />} />
+            <Route path="/ueber-uns/karriere" element={<Career />} />
+            <Route path="/ueber-uns/standorte" element={<Locations />} />
+          </Routes>
+        </Layout>
+      </HashRouter>
+    </ErrorBoundary>
   );
 }
 
